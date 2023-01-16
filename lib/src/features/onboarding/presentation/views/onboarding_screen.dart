@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mon_essaye_riverpod/src/common_widgets/primary_button.dart';
 import 'package:mon_essaye_riverpod/src/features/authentication/presentation/email_password/utils/email_password_sign_in_form_type.dart';
-import 'package:mon_essaye_riverpod/src/routing/app_router.dart';
 
 import '../../../../utils/images_assets.dart';
 import '../controller/onboarding_controller.dart';
@@ -44,7 +42,7 @@ class OnboardingScreen extends ConsumerWidget {
                           .read(onboardingControllerProvider.notifier)
                           .completeOnboarding();
 
-                      context.goNamed(AppRoute.signIn.name);
+                      //context.goNamed(AppRoute.signIn.name);
                     },
             )
           ],

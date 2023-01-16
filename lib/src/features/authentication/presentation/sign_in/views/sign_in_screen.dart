@@ -6,8 +6,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mon_essaye_riverpod/src/utils/async_value_ui.dart';
 
 import '../../../../../common_widgets/primary_button.dart';
-import '../../../../../constants/Strings.dart';
 import '../../../../../constants/keys.dart';
+import '../../../../../constants/strings.dart';
 import '../../../../../routing/app_router.dart';
 import '../controller/sign_in_screen_controller.dart';
 

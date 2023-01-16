@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../common_widgets/list_items_builder.dart';
-import '../../../../constants/Strings.dart';
+import '../../../../constants/strings.dart';
 import '../../domain/entry_list_tile_model.dart';
 import '../../service/entries_service.dart';
 

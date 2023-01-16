@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.godzy.mon_essaye_riverpod">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-configuration android:networkSecurityConfig="@xml/network_security_config"/>
 
     <application
         android:label="mon_essaye_riverpod"

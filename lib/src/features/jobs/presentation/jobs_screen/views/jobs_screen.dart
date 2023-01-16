@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mon_essaye_riverpod/src/utils/async_value_ui.dart';
 
 import '../../../../../common_widgets/list_items_builder.dart';
-import '../../../../../constants/Strings.dart';
+import '../../../../../constants/strings.dart';
 import '../../../../../routing/app_router.dart';
 import '../../../data/repository/firestore_repository.dart';
 import '../../../domain/job.dart';

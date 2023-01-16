@@ -4,7 +4,7 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-import 'env/env.dart';
+import 'env.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
 
   static FirebaseOptions get android => FirebaseOptions(
         apiKey: Env.aApiKey,
-        appId: Env.aApiId,
+        appId: Env.aIdKey,
         messagingSenderId: '485700706196',
         projectId: 'flutterauth-demo',
         databaseURL: 'https://flutterauth-demo.firebaseio.com',
@@ -66,8 +66,8 @@ class DefaultFirebaseOptions {
       );
 
   static FirebaseOptions get ios => FirebaseOptions(
-        apiKey: Env.webApiKey,
-        appId: Env.iosApiId,
+        apiKey: Env.wApiKey,
+        appId: Env.iosIdKey,
         messagingSenderId: '485700706196',
         projectId: 'flutterauth-demo',
         databaseURL: 'https://flutterauth-demo.firebaseio.com',
@@ -81,7 +81,7 @@ class DefaultFirebaseOptions {
 
   static FirebaseOptions get macos => FirebaseOptions(
         apiKey: Env.iosApiKey,
-        appId: Env.iosApiId,
+        appId: Env.iosIdKey,
         messagingSenderId: '485700706196',
         projectId: 'flutterauth-demo',
         databaseURL: 'https://flutterauth-demo.firebaseio.com',
@@ -96,8 +96,8 @@ class DefaultFirebaseOptions {
 
 FirebaseOptions get firebaseOptions {
   return FirebaseOptions(
-    apiKey: Env.webApiKey,
-    appId: Env.wApiId,
+    apiKey: Env.wApiKey,
+    appId: Env.wIdKey,
     messagingSenderId: '485700706196',
     projectId: 'flutterauth-demo',
     databaseURL: 'https://flutterauth-demo.firebaseio.com',

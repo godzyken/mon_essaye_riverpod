@@ -49,5 +49,5 @@ database.rules.json
 firebase-debug.log
 *.env
 /functions/
-/lib/env/
-env.g.dart
+/lib/env.dart
+/lib/env.g.dart
