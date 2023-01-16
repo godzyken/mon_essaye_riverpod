@@ -1,9 +1,8 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
 
 typedef JobID = String;
 
-@immutable
+//@immutable
 class Job extends Equatable {
   const Job({required this.id, required this.name, required this.ratePerHour});
   final JobID id;

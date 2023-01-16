@@ -19,14 +19,20 @@ dependencies:
   equatable: 2.0.5
   flutter_svg: 1.1.6
   shared_preferences: 2.0.16
-  flutter: 
+  envied: 0.3.0
+  flutter:
     sdk: flutter
 
 dev_dependencies: 
   flutter_lints: ^2.0.1
+  envied_generator: 0.3.0
+  build_runner: 2.3.3
   flutter_test: 
     sdk: flutter
 
 flutter: 
   uses-material-design: true
+
+assets: 
+  - assets\.env
 

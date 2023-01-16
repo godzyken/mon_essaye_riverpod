@@ -48,3 +48,6 @@ firestore.rules
 database.rules.json
 firebase-debug.log
 *.env
+/functions/
+/lib/env/
+env.g.dart

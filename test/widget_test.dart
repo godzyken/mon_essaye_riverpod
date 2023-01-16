@@ -7,24 +7,48 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mon_essaye_riverpod/src/features/authentication/data/auth_repository.dart';
 
-import 'package:mon_essaye_riverpod/main.dart';
+import 'user_list_item_test.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('override repositoryProvider', (tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(ProviderScope(
+        overrides: [
+          authRepositoryProvider.overrideWithValue(FakeRepository()),
+        ],
+        child: MaterialApp(
+          home: Scaffold(
+            body: Consumer(
+              builder: (context, ref, _) {
+                final fakeUsers = ref.watch(todoListProvider);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+                if (fakeUsers.asData == null) {
+                  return const CircularProgressIndicator();
+                }
+                return ListView(
+                  children: [
+                    for (final user in fakeUsers.asData!.value)
+                      UserListItem(fakeUser: user)
+                  ],
+                );
+              },
+            ),
+          ),
+        )));
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    expect(find.byType(CircularProgressIndicator), findsOneWidget);
     await tester.pump();
+    expect(find.byType(CircularProgressIndicator), findsNothing);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(tester.widgetList(find.byType(UserListItem)), [
+      isA<UserListItem>()
+          .having((p0) => p0.fakeUser.uid, 'fakeUser.id', '23')
+          .having(
+              (p0) => p0.fakeUser.email, 'fakeUser.email', 'isgodzy@gmail.com')
+          .having((p0) => p0.fakeUser.name, 'fakeUser.name', 'goki')
+    ]);
   });
 }
