@@ -15,6 +15,5 @@ class OnBoardingRepository {
       sharedPreferences.getBool(onboardingCompleteKey) ?? false;
 }
 
-final onboardingRepositoryProvider = Provider<OnBoardingRepository>((ref) {
-  throw UnimplementedError();
-});
+final onboardingRepositoryProvider =
+    Provider<OnBoardingRepository>((ref) => throw UnimplementedError());

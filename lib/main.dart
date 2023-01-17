@@ -7,13 +7,16 @@ import 'src/app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  firebaseInitProvider;
-
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const ProviderScope(child: MyApp()));
 }
 
 final firebaseInitProvider = FutureProvider<FirebaseApp>((ref) async {
+  String? name = 'mon_essaye_riverpod';
   return await Firebase.initializeApp(
+    name: name,
     options: DefaultFirebaseOptions.currentPlatform,
   );
 });

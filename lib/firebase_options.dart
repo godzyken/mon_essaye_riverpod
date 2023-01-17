@@ -48,49 +48,45 @@ class DefaultFirebaseOptions {
   static FirebaseOptions get web => FirebaseOptions(
         apiKey: firebaseOptions.apiKey,
         appId: firebaseOptions.appId,
-        messagingSenderId: '485700706196',
-        projectId: 'flutterauth-demo',
-        authDomain: 'flutterauth-demo.firebaseapp.com',
-        databaseURL: 'https://flutterauth-demo.firebaseio.com',
-        storageBucket: 'flutterauth-demo.appspot.com',
-        measurementId: 'G-CPLLJQT8PR',
+        messagingSenderId: firebaseOptions.messagingSenderId,
+        projectId: firebaseOptions.projectId,
+        authDomain: firebaseOptions.authDomain,
+        databaseURL: firebaseOptions.databaseURL,
+        storageBucket: firebaseOptions.storageBucket,
+        measurementId: firebaseOptions.measurementId,
       );
 
   static FirebaseOptions get android => FirebaseOptions(
         apiKey: Env.aApiKey,
         appId: Env.aIdKey,
-        messagingSenderId: '485700706196',
-        projectId: 'flutterauth-demo',
-        databaseURL: 'https://flutterauth-demo.firebaseio.com',
-        storageBucket: 'flutterauth-demo.appspot.com',
+        messagingSenderId: firebaseOptions.messagingSenderId,
+        projectId: firebaseOptions.projectId,
+        databaseURL: firebaseOptions.databaseURL,
+        storageBucket: firebaseOptions.storageBucket,
       );
 
   static FirebaseOptions get ios => FirebaseOptions(
         apiKey: Env.wApiKey,
         appId: Env.iosIdKey,
-        messagingSenderId: '485700706196',
-        projectId: 'flutterauth-demo',
-        databaseURL: 'https://flutterauth-demo.firebaseio.com',
-        storageBucket: 'flutterauth-demo.appspot.com',
-        androidClientId:
-            '485700706196-281ci74urup2ctt0sol7hh1kjrp5mlrg.apps.googleusercontent.com',
-        iosClientId:
-            '485700706196-0s0uk1t90qtsaudt9kmihmq1ufdbgn9q.apps.googleusercontent.com',
-        iosBundleId: 'com.godzy.monEssayeRiverpod',
+        messagingSenderId: firebaseOptions.messagingSenderId,
+        projectId: firebaseOptions.projectId,
+        databaseURL: firebaseOptions.databaseURL,
+        storageBucket: firebaseOptions.storageBucket,
+        androidClientId: firebaseOptions.androidClientId,
+        iosClientId: firebaseOptions.iosClientId,
+        iosBundleId: firebaseOptions.iosBundleId,
       );
 
   static FirebaseOptions get macos => FirebaseOptions(
         apiKey: Env.iosApiKey,
         appId: Env.iosIdKey,
-        messagingSenderId: '485700706196',
-        projectId: 'flutterauth-demo',
-        databaseURL: 'https://flutterauth-demo.firebaseio.com',
-        storageBucket: 'flutterauth-demo.appspot.com',
-        androidClientId:
-            '485700706196-281ci74urup2ctt0sol7hh1kjrp5mlrg.apps.googleusercontent.com',
-        iosClientId:
-            '485700706196-0s0uk1t90qtsaudt9kmihmq1ufdbgn9q.apps.googleusercontent.com',
-        iosBundleId: 'com.godzy.monEssayeRiverpod',
+        messagingSenderId: firebaseOptions.messagingSenderId,
+        projectId: firebaseOptions.projectId,
+        databaseURL: firebaseOptions.databaseURL,
+        storageBucket: firebaseOptions.storageBucket,
+        androidClientId: firebaseOptions.androidClientId,
+        iosClientId: firebaseOptions.iosClientId,
+        iosBundleId: firebaseOptions.iosBundleId,
       );
 }
 
@@ -108,5 +104,6 @@ FirebaseOptions get firebaseOptions {
         '485700706196-0s0uk1t90qtsaudt9kmihmq1ufdbgn9q.apps.googleusercontent.com',
     iosBundleId: 'com.godzy.monEssayeRiverpod',
     authDomain: 'flutterauth-demo.firebaseapp.com',
+    measurementId: 'G-CPLLJQT8PR',
   );
 }

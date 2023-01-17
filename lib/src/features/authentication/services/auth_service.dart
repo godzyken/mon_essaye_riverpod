@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -7,6 +9,17 @@ import '../data/auth_repository.dart';
 class AuthService {
   AuthService({required this.database});
   final AuthRepository database;
+
+  Future<void> useAuthEmulator() async {
+    try {
+      const host = '127.0.0.1';
+      const port = 9000;
+      await database.useAuthEmulator(host, port);
+    } on FirebaseException catch (e) {
+      // TODO
+      log('FirebaseException: $e');
+    }
+  }
 
   Stream<User?> get authStateChange => database.authStateChanges();
 
